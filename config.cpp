@@ -15,6 +15,7 @@ Config::Config()
     minServiceTime = 5;
     maxServiceTime = 50;
     ipBlockThreshold = 100;
+    cycleDelayMs = 0;
     logFileName = "log.txt";
     blockedRangeStart = "192.168.0.0";
     blockedRangeEnd = "192.168.0.255";
@@ -31,47 +32,51 @@ bool Config::loadFromFile(string path)
     string key;
     while (file >> key)
     {
-        int val;
+        string val;
         file >> val;
         if (key == "initialServers")
         {
-            initialServers = val;
+            initialServers = stoi(val);
         }
         else if (key == "summaryCycles")
         {
-            summaryCycles = val;
+            summaryCycles = stoi(val);
         }
         else if (key == "totalCycles")
         {
-            totalCycles = val;
+            totalCycles = stoi(val);
         }
         else if (key == "initialQueue")
         {
-            initialQueue = val;
+            initialQueue = stoi(val);
         }
         else if (key == "cooldownTime")
         {
-            cooldownTime = val;
+            cooldownTime = stoi(val);
         }
         else if (key == "newRequestProbability")
         {
-            newRequestProbability = val;
+            newRequestProbability = stof(val);
         }
         else if (key == "streamingProbability")
         {
-            streamingProbability = val;
+            streamingProbability = stof(val);
         }
         else if (key == "minServiceTime")
         {
-            minServiceTime = val;
+            minServiceTime = stoi(val);
         }
         else if (key == "maxServiceTime")
         {
-            maxServiceTime = val;
+            maxServiceTime = stoi(val);
         }
         else if (key == "ipBlockThreshold")
         {
-            ipBlockThreshold = val;
+            ipBlockThreshold = stoi(val);
+        }
+        else if (key == "cycleDelayMs")
+        {
+            cycleDelayMs = stoi(val);
         }
         else if (key == "logFileName")
         {

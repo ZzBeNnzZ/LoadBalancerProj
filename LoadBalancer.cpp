@@ -2,6 +2,7 @@
 #include <iostream>
 #include <random>
 #include <chrono>
+#include <thread>
 
 using namespace std;
 
@@ -247,6 +248,8 @@ void LoadBalancer::run()
             // status every summaryCycles (defined with config) cycles
             logger->logCycleSummary(cycle, (int)servers.size(), (int)requestQueue.size());
         }
+
+        this_thread::sleep_for(chrono::milliseconds(config->cycleDelayMs));
     }
 }
 

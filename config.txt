@@ -11,3 +11,4 @@ logFileName log.txt
 blockedRangeStart 192.168.0.0
 blockedRangeEnd 192.168.0.255
 summaryCycles 10
+cycleDelayMs 100

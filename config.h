@@ -17,6 +17,7 @@ public:
     int minServiceTime;
     int maxServiceTime;
     int ipBlockThreshold;
+    int cycleDelayMs;
 
     string logFileName;
     string blockedRangeStart;
