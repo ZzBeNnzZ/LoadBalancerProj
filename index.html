@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Project 3 - Load Balancer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <style type="text/css">
+      .header,
+      .header .name,
+      .header .meta,
+      .header a,
+      .header a:visited,
+      .header a:hover {
+        color: #ffffff;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #ffffff;
+        color: #222222;
+      }
+
+      .header {
+        background: #500000;
+        color: #ffffff;
+        padding: 18px 10px;
+      }
+
+      .header-inner {
+        width: 92%;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .brand-row {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .brand-left {
+        vertical-align: middle;
+        width: 1%;
+        white-space: nowrap;
+      }
+
+      .brand-left img {
+        height: 54px;
+        width: auto;
+        display: block;
+        border: 0;
+      }
+
+      .brand-right {
+        color: white;
+        vertical-align: middle;
+        padding-left: 14px;
+      }
+
+      .header .name {
+        font-size: 26px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        letter-spacing: 1px;
+      }
+
+      .header .meta {
+        font-size: 14px;
+        margin-top: 6px;
+        line-height: 18px;
+      }
+
+      /* Navigation Bar */
+      .navbar {
+        background: #3c0000;
+        padding: 0;
+        border-bottom: 2px solid #700000;
+      }
+
+      .navbar-inner {
+        width: 92%;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .navbar a {
+        display: inline-block;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 12px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+      }
+
+      .navbar a:hover {
+        background: #700000;
+      }
+
+      .navbar a.active {
+        background: #700000;
+        border-bottom: 3px solid #ffffff;
+      }
+
+      .container {
+        width: 92%;
+        max-width: 980px;
+        margin: 18px auto 40px auto;
+        border: 1px solid #e6e6e6;
+        padding: 18px;
+      }
+
+      .section-title {
+        color: #500000;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 0 10px 0;
+        padding-bottom: 6px;
+        border-bottom: 2px solid #500000;
+      }
+
+      .card {
+        border: 1px solid #f0f0f0;
+        padding: 14px;
+        margin-top: 12px;
+        background: #ffffff;
+      }
+
+      .diagram {
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .diagram img {
+        width: 100%;
+        max-width: 900px;
+        border: 1px solid #ddd;
+      }
+
+      .caption {
+        font-size: 12px;
+        color: #666666;
+        margin-top: 8px;
+      }
+
+      .placeholder {
+        background: #fff7f7;
+        border: 1px dashed #500000;
+        padding: 12px;
+        line-height: 20px;
+      }
+
+      .footer {
+        text-align: center;
+        font-size: 12px;
+        color: #777777;
+        padding: 18px 10px;
+        border-top: 1px solid #eeeeee;
+        margin-top: 24px;
+      }
+
+      a {
+        color: #500000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-inner">
+        <table class="brand-row" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="brand-left">
+              <img src="Logo.png" alt="Brand Logo" />
+            </td>
+            <td class="brand-right">
+              <div class="name">Quang Huy Le</div>
+              <div class="meta">
+                CSCE 412 - Cloud Computing<br />
+                Project 3: Load Balancer
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="active">Home</a>
+        <a href="documentation.html">Documentation</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <div class="section-title">Design Diagram</div>
+        <div class="diagram">
+          <img
+            src="ClassRelationship.png"
+            alt="Project 3 UML or Flow Diagram"
+          />
+          <div class="caption">
+            UML Class Diagram for the Load Balancer Simulation
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Text Description of the Diagram</div>
+        <div class="placeholder">
+          This diagram shows how my load balancer simulation is organized. The
+          LoadBalancer class is the main controller where incoming web requests
+          are stored in one main queue, and then sent to a group of WebServer
+          objects to be handled. Each Request includes a source IP, a
+          destination IP, how many cycles it needs to finish, serviceTime, and a
+          jobType letter that marks it as processing or streaming. The
+          LoadBalancer owns the requestQueue, the list of servers, and the
+          cooldownTimer. The simulation starts in run(), where it first creates
+          the initial queue by calling generateInitialQueue() and also prepares
+          the system to start running cycles. During each cycle,
+          randomIncomingRequests() may randomly create and add new requests.
+          Before a request is added into the queue, the IPBlocker checks whether
+          the incoming IP is blocked. If it is blocked, the request is dropped
+          and recorded as blocked in Stats, and if it is allowed, it is added to
+          the queue and recorded as accepted. After that, the LoadBalancer calls
+          oneCyclePast() to move each WebServer forward by one cycle. If a
+          server is busy, it decreases remainingCycle. When the remainingCycle
+          reaches zero, the server finishes the request, becomes available
+          again, and Stats counts the request as completed. Next,
+          dispatchRequests() assigns new work to any available server by popping
+          from the queue and calling WebServer.assign(request), which sets the
+          server's currentRequest and remainingCycle. To prevent the system from
+          being overloaded or underused, scaleIfNeeded() can add or remove
+          servers based on the current queue size. It also uses cooldownTimer so
+          the number of servers does not change too often. Throughout the
+          simulation, Logger.log and Logger.logCycleSummary record important
+          events, and Stats keeps track of totals such as requests generated,
+          accepted, blocked, and completed, how many times servers scaled up or
+          down, and the maximum queue size seen. Finally, Config holds the
+          system settings so the user can easily change values like the starting
+          number of servers, total cycles, initial queue size, cooldown time,
+          and request probabilities.
+        </div>
+      </div>
+
+      <div class="footer">
+        Hosted on people.tamu.edu<br />
+        Last updated: 15/02/2026
+      </div>
+    </div>
+  </body>
+</html>

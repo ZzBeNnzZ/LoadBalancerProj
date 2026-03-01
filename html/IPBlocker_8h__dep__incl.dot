@@ -10,4 +10,6 @@ digraph "IPBlocker.h"
   Node3 [label="LoadBalancer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LoadBalancer_8h.html",tooltip="Defines the LoadBalancer class that orchestrates the entire simulation."];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="LoadBalancer.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LoadBalancer_8cpp.html",tooltip="Implements the LoadBalancer class methods."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
 }

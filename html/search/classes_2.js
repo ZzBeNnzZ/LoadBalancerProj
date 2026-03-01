@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['loadbalancer_81',['LoadBalancer',['../classLoadBalancer.html',1,'']]],
-  ['logger_82',['Logger',['../classLogger.html',1,'']]]
+  ['loadbalancer_84',['LoadBalancer',['../classLoadBalancer.html',1,'']]],
+  ['logger_85',['Logger',['../classLogger.html',1,'']]]
 ];

@@ -56,8 +56,10 @@ int main()
     loadBalancer.run();
 
     cout << endl;
-    cout << COLOR_GREEN << "Simulation complete successfully. Full log saved to: "
-         << config.logFileName << COLOR_RESET << endl;
+    cout
+        << COLOR_GREEN << "Simulation complete successfully. Full log saved to: "
+        << config.logFileName << COLOR_RESET << endl
+        << endl;
 
     return 0;
 }

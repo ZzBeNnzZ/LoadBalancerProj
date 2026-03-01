@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Logger.h File Reference</title>
+<title>CSCE 412 - Load Balancer: Logger.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">CSCE 412 - Load Balancer
    </div>
   </td>
  </tr>
@@ -94,35 +94,126 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a189e7e6af22a24a155c20464a40bf60e"><td class="memItemLeft" align="right" valign="top"><a id="a189e7e6af22a24a155c20464a40bf60e"></a>
-const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a189e7e6af22a24a155c20464a40bf60e">COLOR_RESET</a> = &quot;\033[0m&quot;</td></tr>
-<tr class="memdesc:a189e7e6af22a24a155c20464a40bf60e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets terminal color back to default. <br /></td></tr>
+<tr class="memitem:a189e7e6af22a24a155c20464a40bf60e"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a189e7e6af22a24a155c20464a40bf60e">COLOR_RESET</a> = &quot;\033[0m&quot;</td></tr>
+<tr class="memdesc:a189e7e6af22a24a155c20464a40bf60e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets terminal color back to default.  <a href="Logger_8h.html#a189e7e6af22a24a155c20464a40bf60e">More...</a><br /></td></tr>
 <tr class="separator:a189e7e6af22a24a155c20464a40bf60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6263e9bcfcc5f86d6d7429933c896390"><td class="memItemLeft" align="right" valign="top"><a id="a6263e9bcfcc5f86d6d7429933c896390"></a>
-const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a6263e9bcfcc5f86d6d7429933c896390">COLOR_RED</a> = &quot;\033[31m&quot;</td></tr>
-<tr class="memdesc:a6263e9bcfcc5f86d6d7429933c896390"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI red — used for blocked requests and scale-down events. <br /></td></tr>
+<tr class="memitem:a6263e9bcfcc5f86d6d7429933c896390"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a6263e9bcfcc5f86d6d7429933c896390">COLOR_RED</a> = &quot;\033[31m&quot;</td></tr>
+<tr class="memdesc:a6263e9bcfcc5f86d6d7429933c896390"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI red — used for blocked requests and scale-down events.  <a href="Logger_8h.html#a6263e9bcfcc5f86d6d7429933c896390">More...</a><br /></td></tr>
 <tr class="separator:a6263e9bcfcc5f86d6d7429933c896390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a175b558de7fb4c3f5ffcaef972dd70d2"><td class="memItemLeft" align="right" valign="top"><a id="a175b558de7fb4c3f5ffcaef972dd70d2"></a>
-const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a175b558de7fb4c3f5ffcaef972dd70d2">COLOR_GREEN</a> = &quot;\033[32m&quot;</td></tr>
-<tr class="memdesc:a175b558de7fb4c3f5ffcaef972dd70d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI green — used for completed requests. <br /></td></tr>
+<tr class="memitem:a175b558de7fb4c3f5ffcaef972dd70d2"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a175b558de7fb4c3f5ffcaef972dd70d2">COLOR_GREEN</a> = &quot;\033[32m&quot;</td></tr>
+<tr class="memdesc:a175b558de7fb4c3f5ffcaef972dd70d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI green — used for completed requests.  <a href="Logger_8h.html#a175b558de7fb4c3f5ffcaef972dd70d2">More...</a><br /></td></tr>
 <tr class="separator:a175b558de7fb4c3f5ffcaef972dd70d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad73e9d7464bd2cfc737a6b4567b2cb68"><td class="memItemLeft" align="right" valign="top"><a id="ad73e9d7464bd2cfc737a6b4567b2cb68"></a>
-const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#ad73e9d7464bd2cfc737a6b4567b2cb68">COLOR_YELLOW</a> = &quot;\033[33m&quot;</td></tr>
-<tr class="memdesc:ad73e9d7464bd2cfc737a6b4567b2cb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI yellow — used for scale-up events. <br /></td></tr>
+<tr class="memitem:ad73e9d7464bd2cfc737a6b4567b2cb68"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#ad73e9d7464bd2cfc737a6b4567b2cb68">COLOR_YELLOW</a> = &quot;\033[33m&quot;</td></tr>
+<tr class="memdesc:ad73e9d7464bd2cfc737a6b4567b2cb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI yellow — used for scale-up events.  <a href="Logger_8h.html#ad73e9d7464bd2cfc737a6b4567b2cb68">More...</a><br /></td></tr>
 <tr class="separator:ad73e9d7464bd2cfc737a6b4567b2cb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd97c23d3797fd748d83eb43473337e8"><td class="memItemLeft" align="right" valign="top"><a id="afd97c23d3797fd748d83eb43473337e8"></a>
-const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#afd97c23d3797fd748d83eb43473337e8">COLOR_CYAN</a> = &quot;\033[36m&quot;</td></tr>
-<tr class="memdesc:afd97c23d3797fd748d83eb43473337e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI cyan — used for informational messages and cycle summaries. <br /></td></tr>
+<tr class="memitem:afd97c23d3797fd748d83eb43473337e8"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#afd97c23d3797fd748d83eb43473337e8">COLOR_CYAN</a> = &quot;\033[36m&quot;</td></tr>
+<tr class="memdesc:afd97c23d3797fd748d83eb43473337e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI cyan — used for informational messages and cycle summaries.  <a href="Logger_8h.html#afd97c23d3797fd748d83eb43473337e8">More...</a><br /></td></tr>
 <tr class="separator:afd97c23d3797fd748d83eb43473337e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93aa951247c3eb568b9fc7fbe608e776"><td class="memItemLeft" align="right" valign="top"><a id="a93aa951247c3eb568b9fc7fbe608e776"></a>
-const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a93aa951247c3eb568b9fc7fbe608e776">COLOR_WHITE</a> = &quot;\033[37m&quot;</td></tr>
-<tr class="memdesc:a93aa951247c3eb568b9fc7fbe608e776"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI white — used for general request dispatch messages. <br /></td></tr>
+<tr class="memitem:a93aa951247c3eb568b9fc7fbe608e776"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#a93aa951247c3eb568b9fc7fbe608e776">COLOR_WHITE</a> = &quot;\033[37m&quot;</td></tr>
+<tr class="memdesc:a93aa951247c3eb568b9fc7fbe608e776"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI white — used for general request dispatch messages.  <a href="Logger_8h.html#a93aa951247c3eb568b9fc7fbe608e776">More...</a><br /></td></tr>
 <tr class="separator:a93aa951247c3eb568b9fc7fbe608e776"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the <a class="el" href="classLogger.html" title="Handles all output for the simulation: colored console printing and plain-text file logging.">Logger</a> class and ANSI color code constants. </p>
 <p>The <a class="el" href="classLogger.html" title="Handles all output for the simulation: colored console printing and plain-text file logging.">Logger</a> writes color-coded messages to stdout and simultaneously writes plain text to a log file for persistent records. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Variable Documentation</h2>
+<a id="afd97c23d3797fd748d83eb43473337e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd97c23d3797fd748d83eb43473337e8">&#9670;&nbsp;</a></span>COLOR_CYAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string COLOR_CYAN = &quot;\033[36m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ANSI cyan — used for informational messages and cycle summaries. </p>
+
+</div>
+</div>
+<a id="a175b558de7fb4c3f5ffcaef972dd70d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a175b558de7fb4c3f5ffcaef972dd70d2">&#9670;&nbsp;</a></span>COLOR_GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string COLOR_GREEN = &quot;\033[32m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ANSI green — used for completed requests. </p>
+
+</div>
+</div>
+<a id="a6263e9bcfcc5f86d6d7429933c896390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6263e9bcfcc5f86d6d7429933c896390">&#9670;&nbsp;</a></span>COLOR_RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string COLOR_RED = &quot;\033[31m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ANSI red — used for blocked requests and scale-down events. </p>
+
+</div>
+</div>
+<a id="a189e7e6af22a24a155c20464a40bf60e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189e7e6af22a24a155c20464a40bf60e">&#9670;&nbsp;</a></span>COLOR_RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string COLOR_RESET = &quot;\033[0m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets terminal color back to default. </p>
+
+</div>
+</div>
+<a id="a93aa951247c3eb568b9fc7fbe608e776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93aa951247c3eb568b9fc7fbe608e776">&#9670;&nbsp;</a></span>COLOR_WHITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string COLOR_WHITE = &quot;\033[37m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ANSI white — used for general request dispatch messages. </p>
+
+</div>
+</div>
+<a id="ad73e9d7464bd2cfc737a6b4567b2cb68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad73e9d7464bd2cfc737a6b4567b2cb68">&#9670;&nbsp;</a></span>COLOR_YELLOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string COLOR_YELLOW = &quot;\033[33m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ANSI yellow — used for scale-up events. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

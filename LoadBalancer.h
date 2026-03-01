@@ -44,7 +44,8 @@ private:
     Stats *stats;         ///< Pointer to the statistics tracker
     IPBlocker *ipBlocker; ///< Pointer to the IP firewall/blocker
 
-    int nextServerId; ///< Counter used to assign unique IDs to new servers
+    int nextServerId;      ///< Counter used to assign unique IDs to new servers
+    int startingQueueSize; ///< Queue size after initial fill (for summary)
 
 public:
     /**

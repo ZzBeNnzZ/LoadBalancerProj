@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7eloadbalancer_130',['~LoadBalancer',['../classLoadBalancer.html#a69951a7bb77be7fafd4d5ad6919abd80',1,'LoadBalancer']]],
-  ['_7elogger_131',['~Logger',['../classLogger.html#acb668a9e186a25fbaad2e4af6d1ed00a',1,'Logger']]]
+  ['_7eloadbalancer_136',['~LoadBalancer',['../classLoadBalancer.html#a69951a7bb77be7fafd4d5ad6919abd80',1,'LoadBalancer']]],
+  ['_7elogger_137',['~Logger',['../classLogger.html#acb668a9e186a25fbaad2e4af6d1ed00a',1,'Logger']]]
 ];

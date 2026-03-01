@@ -48,6 +48,7 @@ LoadBalancer::LoadBalancer(Config *cfg, Logger *log, Stats *st, IPBlocker *block
     ipBlocker = blocker;
     cooldownTimer = 0;
     nextServerId = 0;
+    startingQueueSize = 0;
 }
 
 LoadBalancer::~LoadBalancer()
@@ -118,6 +119,8 @@ void LoadBalancer::generateInitialQueue()
                     COLOR_CYAN);
         stats->updateQueueStats((int)requestQueue.size());
     }
+
+    startingQueueSize = (int)requestQueue.size();
 }
 
 void LoadBalancer::randomIncomingRequests(int cycle)
@@ -256,6 +259,25 @@ void LoadBalancer::run()
 
         this_thread::sleep_for(chrono::milliseconds(config->cycleDelayMs));
     }
+
+    // ----- Print summary to log -----
+    logger->log("\n\n========================================", COLOR_CYAN);
+    logger->log("         SIMULATION SUMMARY", COLOR_CYAN);
+    logger->log("========================================", COLOR_CYAN);
+    logger->log("Servers (initial):          " + to_string(config->initialServers), COLOR_CYAN);
+    logger->log("Servers (final):            " + to_string((int)servers.size()), COLOR_CYAN);
+    logger->log("Total clock cycles:         " + to_string(config->totalCycles), COLOR_CYAN);
+    logger->log("Starting queue size:        " + to_string(startingQueueSize), COLOR_CYAN);
+    logger->log("Ending queue size:          " + to_string((int)requestQueue.size()), COLOR_CYAN);
+    logger->log("Task time range:            " + to_string(config->minServiceTime) + " - " + to_string(config->maxServiceTime), COLOR_CYAN);
+    logger->log("Total requests generated:   " + to_string(stats->totalRequestsGenerated), COLOR_CYAN);
+    logger->log("Total requests accepted:    " + to_string(stats->totalRequestsAccepted), COLOR_CYAN);
+    logger->log("Total requests completed:   " + to_string(stats->totalRequestsCompleted), COLOR_CYAN);
+    logger->log("Total requests blocked:     " + to_string(stats->totalRequestsBlocked), COLOR_CYAN);
+    logger->log("Max queue size:             " + to_string(stats->maxQueueSize), COLOR_CYAN);
+    logger->log("Server scale-ups:           " + to_string(stats->serverScaleUps), COLOR_CYAN);
+    logger->log("Server scale-downs:         " + to_string(stats->serverScaleDowns), COLOR_CYAN);
+    logger->log("========================================", COLOR_CYAN);
 }
 
 // int main()

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: WebServer Class Reference</title>
+<title>CSCE 412 - Load Balancer: WebServer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">CSCE 412 - Load Balancer
    </div>
   </td>
  </tr>
@@ -85,9 +85,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c71d2f23ba168c587c17761eac48397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebServer.html#a7c71d2f23ba168c587c17761eac48397">assign</a> (<a class="el" href="structRequest.html">Request</a> req)</td></tr>
 <tr class="memdesc:a7c71d2f23ba168c587c17761eac48397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns a new request to this server and starts processing it.  <a href="classWebServer.html#a7c71d2f23ba168c587c17761eac48397">More...</a><br /></td></tr>
 <tr class="separator:a7c71d2f23ba168c587c17761eac48397"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbbfd9e0d6b3c938e6cf44cf8312c22b"><td class="memItemLeft" align="right" valign="top"><a id="abbbfd9e0d6b3c938e6cf44cf8312c22b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebServer.html#abbbfd9e0d6b3c938e6cf44cf8312c22b">oneCycle</a> ()</td></tr>
-<tr class="memdesc:abbbfd9e0d6b3c938e6cf44cf8312c22b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates one clock cycle of work. Decrements remaining time by 1. When time reaches 0, the server becomes free. <br /></td></tr>
+<tr class="memitem:abbbfd9e0d6b3c938e6cf44cf8312c22b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebServer.html#abbbfd9e0d6b3c938e6cf44cf8312c22b">oneCycle</a> ()</td></tr>
+<tr class="memdesc:abbbfd9e0d6b3c938e6cf44cf8312c22b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates one clock cycle of work. Decrements remaining time by 1. When time reaches 0, the server becomes free.  <a href="classWebServer.html#abbbfd9e0d6b3c938e6cf44cf8312c22b">More...</a><br /></td></tr>
 <tr class="separator:abbbfd9e0d6b3c938e6cf44cf8312c22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ed3c350e24a1eec891ccb7b5c66009e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebServer.html#a2ed3c350e24a1eec891ccb7b5c66009e">finishedJob</a> ()</td></tr>
 <tr class="memdesc:a2ed3c350e24a1eec891ccb7b5c66009e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the server just finished its current request this cycle. (i.e., it was busy and remaining time just hit 0.)  <a href="classWebServer.html#a2ed3c350e24a1eec891ccb7b5c66009e">More...</a><br /></td></tr>
@@ -232,6 +231,25 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Checks if the server is free to take a new request. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if the server is NOT busy, false if it is busy. </dd></dl>
+
+</div>
+</div>
+<a id="abbbfd9e0d6b3c938e6cf44cf8312c22b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbbfd9e0d6b3c938e6cf44cf8312c22b">&#9670;&nbsp;</a></span>oneCycle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebServer::oneCycle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simulates one clock cycle of work. Decrements remaining time by 1. When time reaches 0, the server becomes free. </p>
 
 </div>
 </div>

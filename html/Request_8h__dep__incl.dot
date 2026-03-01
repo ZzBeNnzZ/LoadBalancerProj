@@ -8,9 +8,11 @@ digraph "Request.h"
   Node2 [label="LoadBalancer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LoadBalancer_8h.html",tooltip="Defines the LoadBalancer class that orchestrates the entire simulation."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="LoadBalancer.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LoadBalancer_8cpp.html",tooltip="Implements the LoadBalancer class methods."];
-  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="WebServer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$WebServer_8h.html",tooltip="Defines the WebServer class that processes one request at a time."];
-  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="WebServer.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$WebServer_8cpp.html",tooltip="Implements the WebServer class methods."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="WebServer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$WebServer_8h.html",tooltip="Defines the WebServer class that processes one request at a time."];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="WebServer.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$WebServer_8cpp.html",tooltip="Implements the WebServer class methods."];
 }

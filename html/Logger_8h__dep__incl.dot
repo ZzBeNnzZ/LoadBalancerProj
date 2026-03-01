@@ -8,6 +8,8 @@ digraph "Logger.h"
   Node2 [label="LoadBalancer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LoadBalancer_8h.html",tooltip="Defines the LoadBalancer class that orchestrates the entire simulation."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="LoadBalancer.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LoadBalancer_8cpp.html",tooltip="Implements the LoadBalancer class methods."];
-  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="Logger.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Logger_8cpp.html",tooltip="Implements the Logger class methods."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Logger.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Logger_8cpp.html",tooltip="Implements the Logger class methods."];
 }
