@@ -1,0 +1,116 @@
+\hypertarget{classLogger}{}\doxysection{Logger Class Reference}
+\label{classLogger}\index{Logger@{Logger}}
+
+
+Handles all output for the simulation\+: colored console printing and plain-\/text file logging.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLogger_a7bb9e73467c38dbd19cf322513ac0802}{Logger}} (string file\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. Opens the log file for writing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLogger_acb668a9e186a25fbaad2e4af6d1ed00a}{$\sim$\+Logger}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Closes the log file if it is still open. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_ae2a5eb95ac020246039d9ea2111bd354}{log}} (string msg, string color=\mbox{\hyperlink{Logger_8h_a93aa951247c3eb568b9fc7fbe608e776}{COLOR\+\_\+\+WHITE}})
+\begin{DoxyCompactList}\small\item\em Prints a message to the console in the given color and writes the plain-\/text version to the log file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLogger_a1c50d62922c8d850b7cc49bb0511e79f}{log\+Cycle\+Summary}} (int cycle, int servers, int queue\+Size)
+\begin{DoxyCompactList}\small\item\em Prints and logs a periodic cycle summary line showing the current cycle number, active server count, and queue depth. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles all output for the simulation\+: colored console printing and plain-\/text file logging. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLogger_a7bb9e73467c38dbd19cf322513ac0802}\label{classLogger_a7bb9e73467c38dbd19cf322513ac0802}} 
+\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{Logger()}{Logger()}}
+{\footnotesize\ttfamily Logger\+::\+Logger (\begin{DoxyParamCaption}\item[{string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Constructor. Opens the log file for writing. 
+
+Constructor. Opens the specified log file for writing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Path to the log file (from config).\\
+\hline
+{\em file\+Name} & Path to the log file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLogger_acb668a9e186a25fbaad2e4af6d1ed00a}\label{classLogger_acb668a9e186a25fbaad2e4af6d1ed00a}} 
+\index{Logger@{Logger}!````~Logger@{$\sim$Logger}}
+\index{````~Logger@{$\sim$Logger}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{$\sim$Logger()}{~Logger()}}
+{\footnotesize\ttfamily Logger\+::$\sim$\+Logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. Closes the log file if it is still open. 
+
+Destructor. Closes the log file if it is open. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLogger_ae2a5eb95ac020246039d9ea2111bd354}\label{classLogger_ae2a5eb95ac020246039d9ea2111bd354}} 
+\index{Logger@{Logger}!log@{log}}
+\index{log@{log}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily void Logger\+::log (\begin{DoxyParamCaption}\item[{string}]{msg,  }\item[{string}]{color = {\ttfamily \mbox{\hyperlink{Logger_8h_a93aa951247c3eb568b9fc7fbe608e776}{COLOR\+\_\+\+WHITE}}} }\end{DoxyParamCaption})}
+
+
+
+Prints a message to the console in the given color and writes the plain-\/text version to the log file. 
+
+Outputs a message in color to the console and plain to the log file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message string to output. \\
+\hline
+{\em color} & ANSI color code string (defaults to COLOR\+\_\+\+WHITE).\\
+\hline
+{\em msg} & The message to print. \\
+\hline
+{\em color} & ANSI color escape code to use on the console. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLogger_a1c50d62922c8d850b7cc49bb0511e79f}\label{classLogger_a1c50d62922c8d850b7cc49bb0511e79f}} 
+\index{Logger@{Logger}!logCycleSummary@{logCycleSummary}}
+\index{logCycleSummary@{logCycleSummary}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{logCycleSummary()}{logCycleSummary()}}
+{\footnotesize\ttfamily void Logger\+::log\+Cycle\+Summary (\begin{DoxyParamCaption}\item[{int}]{cycle,  }\item[{int}]{servers,  }\item[{int}]{queue\+Size }\end{DoxyParamCaption})}
+
+
+
+Prints and logs a periodic cycle summary line showing the current cycle number, active server count, and queue depth. 
+
+Prints a periodic summary of the simulation state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cycle} & The current simulation clock cycle. \\
+\hline
+{\em servers} & Number of currently active web servers. \\
+\hline
+{\em queue\+Size} & Number of requests currently in the queue.\\
+\hline
+{\em cycle} & Current clock cycle number. \\
+\hline
+{\em servers} & Number of active web servers. \\
+\hline
+{\em queue\+Size} & Number of requests waiting in the queue. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Logger_8h}{Logger.\+h}}\item 
+\mbox{\hyperlink{Logger_8cpp}{Logger.\+cpp}}\end{DoxyCompactItemize}

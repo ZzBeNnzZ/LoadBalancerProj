@@ -1,0 +1,32 @@
+\hypertarget{LoadBalancer_8h}{}\doxysection{Load\+Balancer.\+h File Reference}
+\label{LoadBalancer_8h}\index{LoadBalancer.h@{LoadBalancer.h}}
+
+
+Defines the \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} class that orchestrates the entire simulation.  
+
+
+{\ttfamily \#include \char`\"{}Request.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Web\+Server.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}IPBlocker.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Logger.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Stats.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Load\+Balancer.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}}
+\begin{DoxyCompactList}\small\item\em Orchestrates the simulation\+: manages web servers, the request queue, dynamic scaling, firewall filtering, logging, and statistics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} class that orchestrates the entire simulation. 
+
+The \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} manages a queue of requests, a pool of web servers, and uses the \mbox{\hyperlink{classIPBlocker}{IPBlocker}}, \mbox{\hyperlink{classLogger}{Logger}}, \mbox{\hyperlink{classStats}{Stats}}, and \mbox{\hyperlink{classConfig}{Config}} classes.
+
+Relationships (from UML)\+: \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} --uses-\/-\/$>$ \mbox{\hyperlink{classIPBlocker}{IPBlocker}} \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} --uses-\/-\/$>$ \mbox{\hyperlink{classLogger}{Logger}} \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} --uses-\/-\/$>$ \mbox{\hyperlink{classStats}{Stats}} \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} --uses-\/-\/$>$ \mbox{\hyperlink{classConfig}{Config}} \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} --manages-\/-\/$>$ \mbox{\hyperlink{classWebServer}{Web\+Server}} (many) \mbox{\hyperlink{classWebServer}{Web\+Server}} --current (0..1)-\/-\/$>$ \mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classLoadBalancer}{Load\+Balancer}} queue --many-\/-\/$>$ \mbox{\hyperlink{structRequest}{Request}} 

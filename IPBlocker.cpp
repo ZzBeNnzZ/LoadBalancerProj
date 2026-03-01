@@ -1,3 +1,8 @@
+/**
+ * @file IPBlocker.cpp
+ * @brief Implements the IPBlocker class methods.
+ */
+
 #include "IPBlocker.h"
 
 /**

@@ -13,7 +13,7 @@ int main()
     }
     else
     {
-        cout << COLOR_YELLOW << "config.txt not found, using defaults." << COLOR_RESET << endl;
+        cout << COLOR_RED << "config.txt not found, using defaults." << COLOR_RESET << endl;
     }
 
     // If initialQueue was left as 0, default to servers * 100

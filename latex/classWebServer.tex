@@ -1,0 +1,126 @@
+\hypertarget{classWebServer}{}\doxysection{Web\+Server Class Reference}
+\label{classWebServer}\index{WebServer@{WebServer}}
+
+
+Simulates a single web server that processes requests one at a time.  
+
+
+
+
+{\ttfamily \#include $<$Web\+Server.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebServer_a5044757cd8574d3f62a7eec5d51fb00f}{Web\+Server}} (int id)
+\begin{DoxyCompactList}\small\item\em Constructor. Creates a server with the given ID, initially not busy. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_a6facc54cbb034d850b16ef48ccaef27c}{is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the server is free to take a new request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebServer_a7c71d2f23ba168c587c17761eac48397}{assign}} (\mbox{\hyperlink{structRequest}{Request}} req)
+\begin{DoxyCompactList}\small\item\em Assigns a new request to this server and starts processing it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classWebServer_abbbfd9e0d6b3c938e6cf44cf8312c22b}\label{classWebServer_abbbfd9e0d6b3c938e6cf44cf8312c22b}} 
+void \mbox{\hyperlink{classWebServer_abbbfd9e0d6b3c938e6cf44cf8312c22b}{one\+Cycle}} ()
+\begin{DoxyCompactList}\small\item\em Simulates one clock cycle of work. Decrements remaining time by 1. When time reaches 0, the server becomes free. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_a2ed3c350e24a1eec891ccb7b5c66009e}{finished\+Job}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the server just finished its current request this cycle. (i.\+e., it was busy and remaining time just hit 0.) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWebServer_abfed970d768e0e5c35a07e06ec937ed2}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets the server\textquotesingle{}s unique ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classWebServer_af70ce1871360f2850029a206d045a3f7}{get\+Current\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Gets the request currently assigned to this server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simulates a single web server that processes requests one at a time. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebServer_a5044757cd8574d3f62a7eec5d51fb00f}\label{classWebServer_a5044757cd8574d3f62a7eec5d51fb00f}} 
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily Web\+Server\+::\+Web\+Server (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Constructor. Creates a server with the given ID, initially not busy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique ID for this server. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebServer_a7c71d2f23ba168c587c17761eac48397}\label{classWebServer_a7c71d2f23ba168c587c17761eac48397}} 
+\index{WebServer@{WebServer}!assign@{assign}}
+\index{assign@{assign}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}}
+{\footnotesize\ttfamily void Web\+Server\+::assign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRequest}{Request}}}]{req }\end{DoxyParamCaption})}
+
+
+
+Assigns a new request to this server and starts processing it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & The \mbox{\hyperlink{structRequest}{Request}} to process. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebServer_a2ed3c350e24a1eec891ccb7b5c66009e}\label{classWebServer_a2ed3c350e24a1eec891ccb7b5c66009e}} 
+\index{WebServer@{WebServer}!finishedJob@{finishedJob}}
+\index{finishedJob@{finishedJob}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{finishedJob()}{finishedJob()}}
+{\footnotesize\ttfamily bool Web\+Server\+::finished\+Job (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the server just finished its current request this cycle. (i.\+e., it was busy and remaining time just hit 0.) 
+
+\begin{DoxyReturn}{Returns}
+True if a job was just completed, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_af70ce1871360f2850029a206d045a3f7}\label{classWebServer_af70ce1871360f2850029a206d045a3f7}} 
+\index{WebServer@{WebServer}!getCurrentRequest@{getCurrentRequest}}
+\index{getCurrentRequest@{getCurrentRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{getCurrentRequest()}{getCurrentRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRequest}{Request}} Web\+Server\+::get\+Current\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the request currently assigned to this server. 
+
+\begin{DoxyReturn}{Returns}
+The current \mbox{\hyperlink{structRequest}{Request}} struct. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_abfed970d768e0e5c35a07e06ec937ed2}\label{classWebServer_abfed970d768e0e5c35a07e06ec937ed2}} 
+\index{WebServer@{WebServer}!getId@{getId}}
+\index{getId@{getId}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Web\+Server\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the server\textquotesingle{}s unique ID. 
+
+\begin{DoxyReturn}{Returns}
+The server ID number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWebServer_a6facc54cbb034d850b16ef48ccaef27c}\label{classWebServer_a6facc54cbb034d850b16ef48ccaef27c}} 
+\index{WebServer@{WebServer}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily bool Web\+Server\+::is\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the server is free to take a new request. 
+
+\begin{DoxyReturn}{Returns}
+True if the server is NOT busy, false if it is busy. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WebServer_8h}{Web\+Server.\+h}}\item 
+\mbox{\hyperlink{WebServer_8cpp}{Web\+Server.\+cpp}}\end{DoxyCompactItemize}

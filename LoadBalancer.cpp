@@ -1,3 +1,8 @@
+/**
+ * @file LoadBalancer.cpp
+ * @brief Implements the LoadBalancer class methods.
+ */
+
 #include "LoadBalancer.h"
 #include <iostream>
 #include <random>

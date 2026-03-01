@@ -1,0 +1,45 @@
+\hypertarget{Logger_8h}{}\doxysection{Logger.\+h File Reference}
+\label{Logger_8h}\index{Logger.h@{Logger.h}}
+
+
+Defines the \mbox{\hyperlink{classLogger}{Logger}} class and ANSI color code constants.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+Include dependency graph for Logger.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLogger}{Logger}}
+\begin{DoxyCompactList}\small\item\em Handles all output for the simulation\+: colored console printing and plain-\/text file logging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Logger_8h_a189e7e6af22a24a155c20464a40bf60e}\label{Logger_8h_a189e7e6af22a24a155c20464a40bf60e}} 
+const string \mbox{\hyperlink{Logger_8h_a189e7e6af22a24a155c20464a40bf60e}{COLOR\+\_\+\+RESET}} = \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\begin{DoxyCompactList}\small\item\em Resets terminal color back to default. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Logger_8h_a6263e9bcfcc5f86d6d7429933c896390}\label{Logger_8h_a6263e9bcfcc5f86d6d7429933c896390}} 
+const string \mbox{\hyperlink{Logger_8h_a6263e9bcfcc5f86d6d7429933c896390}{COLOR\+\_\+\+RED}} = \char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}
+\begin{DoxyCompactList}\small\item\em ANSI red — used for blocked requests and scale-\/down events. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Logger_8h_a175b558de7fb4c3f5ffcaef972dd70d2}\label{Logger_8h_a175b558de7fb4c3f5ffcaef972dd70d2}} 
+const string \mbox{\hyperlink{Logger_8h_a175b558de7fb4c3f5ffcaef972dd70d2}{COLOR\+\_\+\+GREEN}} = \char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}
+\begin{DoxyCompactList}\small\item\em ANSI green — used for completed requests. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Logger_8h_ad73e9d7464bd2cfc737a6b4567b2cb68}\label{Logger_8h_ad73e9d7464bd2cfc737a6b4567b2cb68}} 
+const string \mbox{\hyperlink{Logger_8h_ad73e9d7464bd2cfc737a6b4567b2cb68}{COLOR\+\_\+\+YELLOW}} = \char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{}
+\begin{DoxyCompactList}\small\item\em ANSI yellow — used for scale-\/up events. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Logger_8h_afd97c23d3797fd748d83eb43473337e8}\label{Logger_8h_afd97c23d3797fd748d83eb43473337e8}} 
+const string \mbox{\hyperlink{Logger_8h_afd97c23d3797fd748d83eb43473337e8}{COLOR\+\_\+\+CYAN}} = \char`\"{}\textbackslash{}033\mbox{[}36m\char`\"{}
+\begin{DoxyCompactList}\small\item\em ANSI cyan — used for informational messages and cycle summaries. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Logger_8h_a93aa951247c3eb568b9fc7fbe608e776}\label{Logger_8h_a93aa951247c3eb568b9fc7fbe608e776}} 
+const string \mbox{\hyperlink{Logger_8h_a93aa951247c3eb568b9fc7fbe608e776}{COLOR\+\_\+\+WHITE}} = \char`\"{}\textbackslash{}033\mbox{[}37m\char`\"{}
+\begin{DoxyCompactList}\small\item\em ANSI white — used for general request dispatch messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \mbox{\hyperlink{classLogger}{Logger}} class and ANSI color code constants. 
+
+The \mbox{\hyperlink{classLogger}{Logger}} writes color-\/coded messages to stdout and simultaneously writes plain text to a log file for persistent records. 

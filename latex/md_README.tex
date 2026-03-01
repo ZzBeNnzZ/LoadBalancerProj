@@ -1,0 +1,127 @@
+A C++ simulation of a load-\/balancing system that dynamically manages web servers to handle incoming requests, with firewall/\+DoS protection and real-\/time statistics tracking.\hypertarget{md_README_autotoc_md1}{}\doxysection{Features}\label{md_README_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Dynamic web server scaling based on queue depth
+\item \mbox{\hyperlink{structRequest}{Request}} queue with random IP generation and job types (Processing / Streaming)
+\item IP range blocker and DoS prevention firewall
+\item Color-\/coded console output with ANSI escape codes
+\item File-\/based configuration (no need to recompile to adjust parameters)
+\item Persistent log file with per-\/cycle summaries
+\item Runtime statistics\+: requests generated, accepted, blocked, completed, and server scale events
+\item Configurable per-\/cycle delay to control simulation speed
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md2}{}\doxysection{Project Structure}\label{md_README_autotoc_md2}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ File   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ File   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+{\ttfamily \mbox{\hyperlink{Request_8h}{Request.\+h}}}   &Struct holding a single request (IP in/out, service time, job type)    \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{config_8h}{config.\+h}} / \mbox{\hyperlink{config_8cpp}{config.\+cpp}}}   &Loads simulation parameters from a config file    \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{Logger_8h}{Logger.\+h}} / \mbox{\hyperlink{Logger_8cpp}{Logger.\+cpp}}}   &Handles colored console output and log file writing    \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{IPBlocker_8h}{IPBlocker.\+h}} / \mbox{\hyperlink{IPBlocker_8cpp}{IPBlocker.\+cpp}}}   &Firewall — blocks IP ranges and rate-\/limits repeat requesters    \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{Stats_8h}{Stats.\+h}} / \mbox{\hyperlink{Stats_8cpp}{Stats.\+cpp}}}   &Tracks simulation-\/wide counters and scaling events    \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{WebServer_8h}{Web\+Server.\+h}} / \mbox{\hyperlink{WebServer_8cpp}{Web\+Server.\+cpp}}}   &Models a single web server that processes one request at a time    \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{LoadBalancer_8h}{Load\+Balancer.\+h}} / \mbox{\hyperlink{LoadBalancer_8cpp}{Load\+Balancer.\+cpp}}}   &Orchestrates the simulation\+: manages servers, queue, scaling, and logging   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md3}{}\doxysection{Configuration}\label{md_README_autotoc_md3}
+Edit the config file (default\+: {\ttfamily config.\+txt}) to adjust simulation parameters without recompiling. Each line is a key followed by a value separated by a space\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{initialServers 10}
+\DoxyCodeLine{totalCycles 10000}
+\DoxyCodeLine{initialQueue 0}
+\DoxyCodeLine{cooldownTime 20}
+\DoxyCodeLine{newRequestProbability 0.2}
+\DoxyCodeLine{streamingProbability 0.5}
+\DoxyCodeLine{minServiceTime 5}
+\DoxyCodeLine{maxServiceTime 50}
+\DoxyCodeLine{ipBlockThreshold 100}
+\DoxyCodeLine{logFileName log.txt}
+\DoxyCodeLine{blockedRangeStart 192.168.0.0}
+\DoxyCodeLine{blockedRangeEnd 192.168.0.255}
+\DoxyCodeLine{summaryCycles 10}
+\DoxyCodeLine{cycleDelayMs 100}
+
+\end{DoxyCode}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Parameter   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+{\ttfamily initial\+Servers}   &Number of web servers to start with    \\\cline{1-2}
+{\ttfamily total\+Cycles}   &Total clock cycles to simulate    \\\cline{1-2}
+{\ttfamily initial\+Queue}   &Number of requests to pre-\/fill the queue at startup    \\\cline{1-2}
+{\ttfamily cooldown\+Time}   &Cycles to wait between scaling actions    \\\cline{1-2}
+{\ttfamily new\+Request\+Probability}   &Probability (0.\+0–1.0) that new requests arrive each cycle    \\\cline{1-2}
+{\ttfamily streaming\+Probability}   &Probability (0.\+0–1.0) that a request is type Streaming    \\\cline{1-2}
+{\ttfamily min\+Service\+Time}   &Minimum cycles a request takes to process    \\\cline{1-2}
+{\ttfamily max\+Service\+Time}   &Maximum cycles a request takes to process    \\\cline{1-2}
+{\ttfamily ip\+Block\+Threshold}   &Max requests from one IP before auto-\/blocking it    \\\cline{1-2}
+{\ttfamily log\+File\+Name}   &Output log file path    \\\cline{1-2}
+{\ttfamily blocked\+Range\+Start}   &Start of the IP range to block (firewall)    \\\cline{1-2}
+{\ttfamily blocked\+Range\+End}   &End of the IP range to block (firewall)    \\\cline{1-2}
+{\ttfamily summary\+Cycles}   &Print a status summary every N cycles    \\\cline{1-2}
+{\ttfamily cycle\+Delay\+Ms}   &Milliseconds to sleep between cycles (0 = full speed)   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md4}{}\doxysection{Building}\label{md_README_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md5}{}\doxysection{Running}\label{md_README_autotoc_md5}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./loadbalancer}
+
+\end{DoxyCode}
+
+
+All parameters are read from {\ttfamily config.\+txt}. Edit that file to change the simulation behavior — no recompile needed.\hypertarget{md_README_autotoc_md6}{}\doxysection{Dynamic Scaling Logic}\label{md_README_autotoc_md6}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Condition   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Action    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Condition   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Action    }\\\cline{1-2}
+\endhead
+Queue size $<$ {\ttfamily 50 $\ast$ servers}   &Remove 1 server, wait {\ttfamily cooldown\+Time} cycles before checking again    \\\cline{1-2}
+Queue size $>$ {\ttfamily 80 $\ast$ servers}   &Add 1 server, wait {\ttfamily cooldown\+Time} cycles before checking again   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md7}{}\doxysection{Output Colors}\label{md_README_autotoc_md7}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Color   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Meaning    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Color   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Meaning    }\\\cline{1-2}
+\endhead
+Green   &\mbox{\hyperlink{structRequest}{Request}} completed by a server    \\\cline{1-2}
+Red   &\mbox{\hyperlink{structRequest}{Request}} blocked by firewall, or server scaled down    \\\cline{1-2}
+Yellow   &Server scaled up    \\\cline{1-2}
+Cyan   &Informational messages and cycle summaries    \\\cline{1-2}
+White   &\mbox{\hyperlink{structRequest}{Request}} dispatched to a server   \\\cline{1-2}
+\end{longtabu}
+
+
+The full log is written to the file specified by {\ttfamily log\+File\+Name} in the config (default\+: {\ttfamily log.\+txt}).\hypertarget{md_README_autotoc_md8}{}\doxysection{Author}\label{md_README_autotoc_md8}
+QUANG HUY LE -\/ TAMU CSCE 412 

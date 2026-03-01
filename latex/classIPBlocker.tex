@@ -1,0 +1,82 @@
+\hypertarget{classIPBlocker}{}\doxysection{IPBlocker Class Reference}
+\label{classIPBlocker}\index{IPBlocker@{IPBlocker}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIPBlocker_aa64065622e182dc9779e6987e034cb3b}{IPBlocker}} (int threshold, string range\+Start\+IP, string range\+End\+IP)
+\begin{DoxyCompactList}\small\item\em Constructor. Sets up the blocker with a threshold and an IP range to block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIPBlocker_ace294f078c0c69c5411cc4d43e6df578}{is\+Blocked}} (string ip)
+\begin{DoxyCompactList}\small\item\em Checks if a given IP address should be blocked. An IP is blocked if\+: 1) It falls within the blocked IP range, OR 2) It has sent more requests than the threshold. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIPBlocker_aa64065622e182dc9779e6987e034cb3b}\label{classIPBlocker_aa64065622e182dc9779e6987e034cb3b}} 
+\index{IPBlocker@{IPBlocker}!IPBlocker@{IPBlocker}}
+\index{IPBlocker@{IPBlocker}!IPBlocker@{IPBlocker}}
+\doxysubsubsection{\texorpdfstring{IPBlocker()}{IPBlocker()}}
+{\footnotesize\ttfamily IPBlocker\+::\+IPBlocker (\begin{DoxyParamCaption}\item[{int}]{threshold,  }\item[{string}]{range\+Start\+IP,  }\item[{string}]{range\+End\+IP }\end{DoxyParamCaption})}
+
+
+
+Constructor. Sets up the blocker with a threshold and an IP range to block. 
+
+Constructor. Stores the block threshold and converts the IP range to numbers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & Number of requests before an IP gets auto-\/blocked. \\
+\hline
+{\em range\+Start\+IP} & Starting IP of the blocked range (e.\+g., \char`\"{}192.\+168.\+0.\+0\char`\"{}). \\
+\hline
+{\em range\+End\+IP} & Ending IP of the blocked range (e.\+g., \char`\"{}192.\+168.\+0.\+255\char`\"{}).\\
+\hline
+{\em threshold} & Max requests before an IP is auto-\/blocked. \\
+\hline
+{\em range\+Start\+IP} & Start of blocked range as a string. \\
+\hline
+{\em range\+End\+IP} & End of blocked range as a string. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIPBlocker_ace294f078c0c69c5411cc4d43e6df578}\label{classIPBlocker_ace294f078c0c69c5411cc4d43e6df578}} 
+\index{IPBlocker@{IPBlocker}!isBlocked@{isBlocked}}
+\index{isBlocked@{isBlocked}!IPBlocker@{IPBlocker}}
+\doxysubsubsection{\texorpdfstring{isBlocked()}{isBlocked()}}
+{\footnotesize\ttfamily bool IPBlocker\+::is\+Blocked (\begin{DoxyParamCaption}\item[{string}]{ip }\end{DoxyParamCaption})}
+
+
+
+Checks if a given IP address should be blocked. An IP is blocked if\+: 1) It falls within the blocked IP range, OR 2) It has sent more requests than the threshold. 
+
+Checks if an IP should be blocked. Also tracks how many times each IP is seen.
+
+This method also increments the hit count for the IP.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & The IP address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the IP is blocked, false if it is allowed.
+\end{DoxyReturn}
+\begin{DoxyVerb}   Blocking happens if:
+   1) The IP falls within the configured blocked range, OR
+   2) The IP has been seen more times than the threshold.
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em ip} & The IP address to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if blocked, false if allowed through. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{IPBlocker_8h}{IPBlocker.\+h}}\item 
+\mbox{\hyperlink{IPBlocker_8cpp}{IPBlocker.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,161 @@
+\hypertarget{classLoadBalancer}{}\doxysection{Load\+Balancer Class Reference}
+\label{classLoadBalancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+Orchestrates the simulation\+: manages web servers, the request queue, dynamic scaling, firewall filtering, logging, and statistics.  
+
+
+
+
+{\ttfamily \#include $<$Load\+Balancer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLoadBalancer_a4b743eefc682fb030b5acd2c72757c49}{Load\+Balancer}} (\mbox{\hyperlink{classConfig}{Config}} $\ast$cfg, \mbox{\hyperlink{classLogger}{Logger}} $\ast$log, \mbox{\hyperlink{classStats}{Stats}} $\ast$st, \mbox{\hyperlink{classIPBlocker}{IPBlocker}} $\ast$blocker)
+\begin{DoxyCompactList}\small\item\em Constructor. Stores pointers to all dependency objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLoadBalancer_a69951a7bb77be7fafd4d5ad6919abd80}\label{classLoadBalancer_a69951a7bb77be7fafd4d5ad6919abd80}} 
+\mbox{\hyperlink{classLoadBalancer_a69951a7bb77be7fafd4d5ad6919abd80}{$\sim$\+Load\+Balancer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Frees all dynamically allocated \mbox{\hyperlink{classWebServer}{Web\+Server}} objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_ac1fbb11df2fb0937fa69c4c3fe0c5b8f}{init}} (int server\+Count)
+\begin{DoxyCompactList}\small\item\em Creates the initial pool of web servers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLoadBalancer_a51538c17a78f28d2c5d6c3e1a4ffe964}\label{classLoadBalancer_a51538c17a78f28d2c5d6c3e1a4ffe964}} 
+void \mbox{\hyperlink{classLoadBalancer_a51538c17a78f28d2c5d6c3e1a4ffe964}{generate\+Initial\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Fills the request queue with an initial batch of random requests. The count is controlled by config-\/$>$initial\+Queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classLoadBalancer_a6a45022237290d76fb1eeb2a3a18756c}{make\+Random\+Request}} ()
+\begin{DoxyCompactList}\small\item\em Generates a single request with random IPs, service time, and job type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a65807a7273066219bb7628773af1c26d}{random\+Incoming\+Requests}} (int cycle)
+\begin{DoxyCompactList}\small\item\em Randomly generates new incoming requests each cycle based on config-\/$>$new\+Request\+Probability. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a224fed5e5012a7f3d9656198235f5772}{one\+Cycle\+Past}} (int cycle)
+\begin{DoxyCompactList}\small\item\em Ticks all active servers forward by one clock cycle and logs any requests that were just completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a00e5ea8e9be232452c228d79e70ec32c}{dispatch\+Requests}} (int cycle)
+\begin{DoxyCompactList}\small\item\em Assigns queued requests to any available (idle) servers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadBalancer_a5c9d369d2c790bff4a097d33357cff73}{scale\+If\+Needed}} (int cycle)
+\begin{DoxyCompactList}\small\item\em Checks the queue depth and adds or removes a server if thresholds are exceeded. Respects the cooldown timer between scaling actions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLoadBalancer_a528909054cb20964cba1fb35ceb9003f}\label{classLoadBalancer_a528909054cb20964cba1fb35ceb9003f}} 
+void \mbox{\hyperlink{classLoadBalancer_a528909054cb20964cba1fb35ceb9003f}{run}} ()
+\begin{DoxyCompactList}\small\item\em Runs the full simulation loop from cycle 1 to config-\/$>$total\+Cycles. Each cycle\+: ticks servers, dispatches requests, generates new traffic, checks scaling, and optionally prints a summary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Orchestrates the simulation\+: manages web servers, the request queue, dynamic scaling, firewall filtering, logging, and statistics. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLoadBalancer_a4b743eefc682fb030b5acd2c72757c49}\label{classLoadBalancer_a4b743eefc682fb030b5acd2c72757c49}} 
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classConfig}{Config}} $\ast$}]{cfg,  }\item[{\mbox{\hyperlink{classLogger}{Logger}} $\ast$}]{log,  }\item[{\mbox{\hyperlink{classStats}{Stats}} $\ast$}]{st,  }\item[{\mbox{\hyperlink{classIPBlocker}{IPBlocker}} $\ast$}]{blocker }\end{DoxyParamCaption})}
+
+
+
+Constructor. Stores pointers to all dependency objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cfg} & Pointer to the loaded \mbox{\hyperlink{classConfig}{Config}}. \\
+\hline
+{\em log} & Pointer to the \mbox{\hyperlink{classLogger}{Logger}}. \\
+\hline
+{\em st} & Pointer to the \mbox{\hyperlink{classStats}{Stats}} tracker. \\
+\hline
+{\em blocker} & Pointer to the \mbox{\hyperlink{classIPBlocker}{IPBlocker}} firewall. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadBalancer_a00e5ea8e9be232452c228d79e70ec32c}\label{classLoadBalancer_a00e5ea8e9be232452c228d79e70ec32c}} 
+\index{LoadBalancer@{LoadBalancer}!dispatchRequests@{dispatchRequests}}
+\index{dispatchRequests@{dispatchRequests}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{dispatchRequests()}{dispatchRequests()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::dispatch\+Requests (\begin{DoxyParamCaption}\item[{int}]{cycle }\end{DoxyParamCaption})}
+
+
+
+Assigns queued requests to any available (idle) servers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cycle} & The current simulation clock cycle number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_ac1fbb11df2fb0937fa69c4c3fe0c5b8f}\label{classLoadBalancer_ac1fbb11df2fb0937fa69c4c3fe0c5b8f}} 
+\index{LoadBalancer@{LoadBalancer}!init@{init}}
+\index{init@{init}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::init (\begin{DoxyParamCaption}\item[{int}]{server\+Count }\end{DoxyParamCaption})}
+
+
+
+Creates the initial pool of web servers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+Count} & Number of servers to start with. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a6a45022237290d76fb1eeb2a3a18756c}\label{classLoadBalancer_a6a45022237290d76fb1eeb2a3a18756c}} 
+\index{LoadBalancer@{LoadBalancer}!makeRandomRequest@{makeRandomRequest}}
+\index{makeRandomRequest@{makeRandomRequest}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{makeRandomRequest()}{makeRandomRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRequest}{Request}} Load\+Balancer\+::make\+Random\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates a single request with random IPs, service time, and job type. 
+
+\begin{DoxyReturn}{Returns}
+A newly created \mbox{\hyperlink{structRequest}{Request}} struct. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoadBalancer_a224fed5e5012a7f3d9656198235f5772}\label{classLoadBalancer_a224fed5e5012a7f3d9656198235f5772}} 
+\index{LoadBalancer@{LoadBalancer}!oneCyclePast@{oneCyclePast}}
+\index{oneCyclePast@{oneCyclePast}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{oneCyclePast()}{oneCyclePast()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::one\+Cycle\+Past (\begin{DoxyParamCaption}\item[{int}]{cycle }\end{DoxyParamCaption})}
+
+
+
+Ticks all active servers forward by one clock cycle and logs any requests that were just completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cycle} & The current simulation clock cycle number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a65807a7273066219bb7628773af1c26d}\label{classLoadBalancer_a65807a7273066219bb7628773af1c26d}} 
+\index{LoadBalancer@{LoadBalancer}!randomIncomingRequests@{randomIncomingRequests}}
+\index{randomIncomingRequests@{randomIncomingRequests}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{randomIncomingRequests()}{randomIncomingRequests()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::random\+Incoming\+Requests (\begin{DoxyParamCaption}\item[{int}]{cycle }\end{DoxyParamCaption})}
+
+
+
+Randomly generates new incoming requests each cycle based on config-\/$>$new\+Request\+Probability. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cycle} & The current simulation clock cycle number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadBalancer_a5c9d369d2c790bff4a097d33357cff73}\label{classLoadBalancer_a5c9d369d2c790bff4a097d33357cff73}} 
+\index{LoadBalancer@{LoadBalancer}!scaleIfNeeded@{scaleIfNeeded}}
+\index{scaleIfNeeded@{scaleIfNeeded}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{scaleIfNeeded()}{scaleIfNeeded()}}
+{\footnotesize\ttfamily void Load\+Balancer\+::scale\+If\+Needed (\begin{DoxyParamCaption}\item[{int}]{cycle }\end{DoxyParamCaption})}
+
+
+
+Checks the queue depth and adds or removes a server if thresholds are exceeded. Respects the cooldown timer between scaling actions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cycle} & The current simulation clock cycle number. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LoadBalancer_8h}{Load\+Balancer.\+h}}\item 
+\mbox{\hyperlink{LoadBalancer_8cpp}{Load\+Balancer.\+cpp}}\end{DoxyCompactItemize}

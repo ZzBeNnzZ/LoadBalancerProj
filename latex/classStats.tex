@@ -1,0 +1,158 @@
+\hypertarget{classStats}{}\doxysection{Stats Class Reference}
+\label{classStats}\index{Stats@{Stats}}
+
+
+Tracks all statistics during the load balancer simulation.  
+
+
+
+
+{\ttfamily \#include $<$Stats.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStats_aed79e2b7167040dada2cb2ba8b90ad9b}{Stats}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. Initializes all counters to zero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStats_af0467e2b8632b794c5fce752df8d7047}{update\+Queue\+Stats}} (int current\+Queue\+Size)
+\begin{DoxyCompactList}\small\item\em Updates the max queue size if the current size is larger. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStats_a855d7baa2c474bac25c2447522fff256}{req\+Generated}} ()
+\begin{DoxyCompactList}\small\item\em Increments the total requests generated counter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStats_ac7780e5e6e077c0e477dd9c88e5d5bcc}{req\+Accepted}} ()
+\begin{DoxyCompactList}\small\item\em Increments the total requests accepted counter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStats_aceca5d3df030b4b90b57070b74c4632c}{req\+Blocked}} ()
+\begin{DoxyCompactList}\small\item\em Increments the total requests blocked counter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStats_a2ce33d736cc074e2b28aa9010d945bec}{req\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em Increments the total requests completed counter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStats_adde6a490c5a3b4c8f0fd19b5b444be10}{server\+Scaled\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Increments the server scale-\/up counter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStats_a5c22fe211cb1a6ed9f66071c9ada96bf}{server\+Scaled\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Increments the server scale-\/down counter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStats_ab3fab20a833ef2f049d297d19c01b467}\label{classStats_ab3fab20a833ef2f049d297d19c01b467}} 
+long long \mbox{\hyperlink{classStats_ab3fab20a833ef2f049d297d19c01b467}{total\+Requests\+Generated}}
+\begin{DoxyCompactList}\small\item\em Total number of requests created during the simulation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStats_a572707f16a37f81664c5d99c21b9e007}\label{classStats_a572707f16a37f81664c5d99c21b9e007}} 
+long long \mbox{\hyperlink{classStats_a572707f16a37f81664c5d99c21b9e007}{total\+Requests\+Accepted}}
+\begin{DoxyCompactList}\small\item\em Requests that passed the firewall and entered the queue. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStats_a3d6b82f9fb282f75fba8af9c89a91ab4}\label{classStats_a3d6b82f9fb282f75fba8af9c89a91ab4}} 
+long long \mbox{\hyperlink{classStats_a3d6b82f9fb282f75fba8af9c89a91ab4}{total\+Requests\+Blocked}}
+\begin{DoxyCompactList}\small\item\em Requests rejected by the \mbox{\hyperlink{classIPBlocker}{IPBlocker}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStats_a59fb371755aea1a0332a5be0e5b82bec}\label{classStats_a59fb371755aea1a0332a5be0e5b82bec}} 
+long long \mbox{\hyperlink{classStats_a59fb371755aea1a0332a5be0e5b82bec}{total\+Requests\+Completed}}
+\begin{DoxyCompactList}\small\item\em Requests fully processed by a web server. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStats_a8f0ba24b7b2e84aebe0908ee588a4774}\label{classStats_a8f0ba24b7b2e84aebe0908ee588a4774}} 
+long long \mbox{\hyperlink{classStats_a8f0ba24b7b2e84aebe0908ee588a4774}{server\+Scale\+Ups}}
+\begin{DoxyCompactList}\small\item\em Number of times a server was added. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStats_ab24e7bd0b281200ef4f90ec8166ef19c}\label{classStats_ab24e7bd0b281200ef4f90ec8166ef19c}} 
+long long \mbox{\hyperlink{classStats_ab24e7bd0b281200ef4f90ec8166ef19c}{server\+Scale\+Downs}}
+\begin{DoxyCompactList}\small\item\em Number of times a server was removed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStats_a2b265250414f8c33a4bf7dfa042fc2bc}\label{classStats_a2b265250414f8c33a4bf7dfa042fc2bc}} 
+long long \mbox{\hyperlink{classStats_a2b265250414f8c33a4bf7dfa042fc2bc}{max\+Queue\+Size}}
+\begin{DoxyCompactList}\small\item\em Peak queue depth recorded during the simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tracks all statistics during the load balancer simulation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStats_aed79e2b7167040dada2cb2ba8b90ad9b}\label{classStats_aed79e2b7167040dada2cb2ba8b90ad9b}} 
+\index{Stats@{Stats}!Stats@{Stats}}
+\index{Stats@{Stats}!Stats@{Stats}}
+\doxysubsubsection{\texorpdfstring{Stats()}{Stats()}}
+{\footnotesize\ttfamily Stats\+::\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. Initializes all counters to zero. 
+
+Constructor. Sets all counters to zero. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStats_ac7780e5e6e077c0e477dd9c88e5d5bcc}\label{classStats_ac7780e5e6e077c0e477dd9c88e5d5bcc}} 
+\index{Stats@{Stats}!reqAccepted@{reqAccepted}}
+\index{reqAccepted@{reqAccepted}!Stats@{Stats}}
+\doxysubsubsection{\texorpdfstring{reqAccepted()}{reqAccepted()}}
+{\footnotesize\ttfamily void Stats\+::req\+Accepted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the total requests accepted counter. 
+
+Adds 1 to requests accepted (passed firewall). \mbox{\Hypertarget{classStats_aceca5d3df030b4b90b57070b74c4632c}\label{classStats_aceca5d3df030b4b90b57070b74c4632c}} 
+\index{Stats@{Stats}!reqBlocked@{reqBlocked}}
+\index{reqBlocked@{reqBlocked}!Stats@{Stats}}
+\doxysubsubsection{\texorpdfstring{reqBlocked()}{reqBlocked()}}
+{\footnotesize\ttfamily void Stats\+::req\+Blocked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the total requests blocked counter. 
+
+Adds 1 to requests blocked by the IP blocker. \mbox{\Hypertarget{classStats_a2ce33d736cc074e2b28aa9010d945bec}\label{classStats_a2ce33d736cc074e2b28aa9010d945bec}} 
+\index{Stats@{Stats}!reqCompleted@{reqCompleted}}
+\index{reqCompleted@{reqCompleted}!Stats@{Stats}}
+\doxysubsubsection{\texorpdfstring{reqCompleted()}{reqCompleted()}}
+{\footnotesize\ttfamily void Stats\+::req\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the total requests completed counter. 
+
+Adds 1 to requests fully completed by a server. \mbox{\Hypertarget{classStats_a855d7baa2c474bac25c2447522fff256}\label{classStats_a855d7baa2c474bac25c2447522fff256}} 
+\index{Stats@{Stats}!reqGenerated@{reqGenerated}}
+\index{reqGenerated@{reqGenerated}!Stats@{Stats}}
+\doxysubsubsection{\texorpdfstring{reqGenerated()}{reqGenerated()}}
+{\footnotesize\ttfamily void Stats\+::req\+Generated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the total requests generated counter. 
+
+Adds 1 to requests generated. \mbox{\Hypertarget{classStats_a5c22fe211cb1a6ed9f66071c9ada96bf}\label{classStats_a5c22fe211cb1a6ed9f66071c9ada96bf}} 
+\index{Stats@{Stats}!serverScaledDown@{serverScaledDown}}
+\index{serverScaledDown@{serverScaledDown}!Stats@{Stats}}
+\doxysubsubsection{\texorpdfstring{serverScaledDown()}{serverScaledDown()}}
+{\footnotesize\ttfamily void Stats\+::server\+Scaled\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the server scale-\/down counter. 
+
+Adds 1 to the server scale-\/down counter. \mbox{\Hypertarget{classStats_adde6a490c5a3b4c8f0fd19b5b444be10}\label{classStats_adde6a490c5a3b4c8f0fd19b5b444be10}} 
+\index{Stats@{Stats}!serverScaledUp@{serverScaledUp}}
+\index{serverScaledUp@{serverScaledUp}!Stats@{Stats}}
+\doxysubsubsection{\texorpdfstring{serverScaledUp()}{serverScaledUp()}}
+{\footnotesize\ttfamily void Stats\+::server\+Scaled\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the server scale-\/up counter. 
+
+Adds 1 to the server scale-\/up counter. \mbox{\Hypertarget{classStats_af0467e2b8632b794c5fce752df8d7047}\label{classStats_af0467e2b8632b794c5fce752df8d7047}} 
+\index{Stats@{Stats}!updateQueueStats@{updateQueueStats}}
+\index{updateQueueStats@{updateQueueStats}!Stats@{Stats}}
+\doxysubsubsection{\texorpdfstring{updateQueueStats()}{updateQueueStats()}}
+{\footnotesize\ttfamily void Stats\+::update\+Queue\+Stats (\begin{DoxyParamCaption}\item[{int}]{current\+Queue\+Size }\end{DoxyParamCaption})}
+
+
+
+Updates the max queue size if the current size is larger. 
+
+Checks if the current queue size is the new maximum.
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Queue\+Size} & The current number of requests in the queue.\\
+\hline
+{\em current\+Queue\+Size} & The queue size right now. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Stats_8h}{Stats.\+h}}\item 
+\mbox{\hyperlink{Stats_8cpp}{Stats.\+cpp}}\end{DoxyCompactItemize}

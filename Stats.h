@@ -16,13 +16,13 @@
 class Stats
 {
 public:
-    long long totalRequestsGenerated;
-    long long totalRequestsAccepted;
-    long long totalRequestsBlocked;
-    long long totalRequestsCompleted;
-    long long serverScaleUps;
-    long long serverScaleDowns;
-    long long maxQueueSize;
+    long long totalRequestsGenerated;  ///< Total number of requests created during the simulation
+    long long totalRequestsAccepted;   ///< Requests that passed the firewall and entered the queue
+    long long totalRequestsBlocked;    ///< Requests rejected by the IPBlocker
+    long long totalRequestsCompleted;  ///< Requests fully processed by a web server
+    long long serverScaleUps;          ///< Number of times a server was added
+    long long serverScaleDowns;        ///< Number of times a server was removed
+    long long maxQueueSize;            ///< Peak queue depth recorded during the simulation
 
     /**
      * @brief Constructor. Initializes all counters to zero.

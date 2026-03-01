@@ -1,0 +1,96 @@
+\hypertarget{classConfig}{}\doxysection{Config Class Reference}
+\label{classConfig}\index{Config@{Config}}
+
+
+Stores all tunable parameters for the load balancer simulation.  
+
+
+
+
+{\ttfamily \#include $<$config.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConfig_abd0c571c116924871e30444b192b792a}\label{classConfig_abd0c571c116924871e30444b192b792a}} 
+\mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. Sets all fields to sensible default values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classConfig_a727645c1fe7660faad404a29bc1f13e8}{load\+From\+File}} (string path)
+\begin{DoxyCompactList}\small\item\em Loads configuration values from a key-\/value text file. Any key found in the file overrides the corresponding default. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConfig_aa38088329e34bfb735902a5a05621c17}\label{classConfig_aa38088329e34bfb735902a5a05621c17}} 
+int \mbox{\hyperlink{classConfig_aa38088329e34bfb735902a5a05621c17}{initial\+Servers}}
+\begin{DoxyCompactList}\small\item\em Number of web servers to start with. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_a2ac61f5b919061eb275c3c20f5197d8e}\label{classConfig_a2ac61f5b919061eb275c3c20f5197d8e}} 
+int \mbox{\hyperlink{classConfig_a2ac61f5b919061eb275c3c20f5197d8e}{total\+Cycles}}
+\begin{DoxyCompactList}\small\item\em Total number of clock cycles to simulate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_accd546c6fbe90b9b7795e1452456e724}\label{classConfig_accd546c6fbe90b9b7795e1452456e724}} 
+int \mbox{\hyperlink{classConfig_accd546c6fbe90b9b7795e1452456e724}{summary\+Cycles}}
+\begin{DoxyCompactList}\small\item\em Print a summary log every N cycles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_a5331f3769c0e2c96fdfcc019fa9f9ec7}\label{classConfig_a5331f3769c0e2c96fdfcc019fa9f9ec7}} 
+int \mbox{\hyperlink{classConfig_a5331f3769c0e2c96fdfcc019fa9f9ec7}{initial\+Queue}}
+\begin{DoxyCompactList}\small\item\em Number of requests to pre-\/fill the queue with at startup. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_a7000812a4928f4e3bf0770b323d03a68}\label{classConfig_a7000812a4928f4e3bf0770b323d03a68}} 
+int \mbox{\hyperlink{classConfig_a7000812a4928f4e3bf0770b323d03a68}{cooldown\+Time}}
+\begin{DoxyCompactList}\small\item\em Cycles to wait between consecutive scaling actions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_a2ddd627e2a1a683a767f8329bf068d2d}\label{classConfig_a2ddd627e2a1a683a767f8329bf068d2d}} 
+float \mbox{\hyperlink{classConfig_a2ddd627e2a1a683a767f8329bf068d2d}{new\+Request\+Probability}}
+\begin{DoxyCompactList}\small\item\em Probability (0.\+0–1.0) that new requests arrive each cycle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_a3e76ccc1d81ab74aaba597e24b64f769}\label{classConfig_a3e76ccc1d81ab74aaba597e24b64f769}} 
+float \mbox{\hyperlink{classConfig_a3e76ccc1d81ab74aaba597e24b64f769}{streaming\+Probability}}
+\begin{DoxyCompactList}\small\item\em Probability (0.\+0–1.0) that a new request is type \textquotesingle{}S\textquotesingle{} (streaming) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_af4d937f6e44b42f0591f28faf2271f24}\label{classConfig_af4d937f6e44b42f0591f28faf2271f24}} 
+int \mbox{\hyperlink{classConfig_af4d937f6e44b42f0591f28faf2271f24}{min\+Service\+Time}}
+\begin{DoxyCompactList}\small\item\em Minimum clock cycles a request takes to process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_a1bc826f297f5843ed9446af99d256f60}\label{classConfig_a1bc826f297f5843ed9446af99d256f60}} 
+int \mbox{\hyperlink{classConfig_a1bc826f297f5843ed9446af99d256f60}{max\+Service\+Time}}
+\begin{DoxyCompactList}\small\item\em Maximum clock cycles a request takes to process. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_a1594317c674aaed2827a52132b00ecc3}\label{classConfig_a1594317c674aaed2827a52132b00ecc3}} 
+int \mbox{\hyperlink{classConfig_a1594317c674aaed2827a52132b00ecc3}{ip\+Block\+Threshold}}
+\begin{DoxyCompactList}\small\item\em Max requests from one IP before it is auto-\/blocked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_aef85d41955a0b37ee104064e6249921b}\label{classConfig_aef85d41955a0b37ee104064e6249921b}} 
+int \mbox{\hyperlink{classConfig_aef85d41955a0b37ee104064e6249921b}{cycle\+Delay\+Ms}}
+\begin{DoxyCompactList}\small\item\em Milliseconds to sleep between cycles (0 = full speed) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_aea767b47b295f1b174ecdfa943523583}\label{classConfig_aea767b47b295f1b174ecdfa943523583}} 
+string \mbox{\hyperlink{classConfig_aea767b47b295f1b174ecdfa943523583}{log\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Path to the output log file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_af9851fc67d074de1003c9c80fb39e1d7}\label{classConfig_af9851fc67d074de1003c9c80fb39e1d7}} 
+string \mbox{\hyperlink{classConfig_af9851fc67d074de1003c9c80fb39e1d7}{blocked\+Range\+Start}}
+\begin{DoxyCompactList}\small\item\em Start of the IP range to block (e.\+g., \char`\"{}192.\+168.\+0.\+0\char`\"{}) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConfig_a96d838a7e3aae0220f917a717eddd995}\label{classConfig_a96d838a7e3aae0220f917a717eddd995}} 
+string \mbox{\hyperlink{classConfig_a96d838a7e3aae0220f917a717eddd995}{blocked\+Range\+End}}
+\begin{DoxyCompactList}\small\item\em End of the IP range to block (e.\+g., \char`\"{}192.\+168.\+0.\+255\char`\"{}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stores all tunable parameters for the load balancer simulation. 
+
+Default values are set in the constructor. Calling \mbox{\hyperlink{classConfig_a727645c1fe7660faad404a29bc1f13e8}{load\+From\+File()}} overrides them with values from the config file. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConfig_a727645c1fe7660faad404a29bc1f13e8}\label{classConfig_a727645c1fe7660faad404a29bc1f13e8}} 
+\index{Config@{Config}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily bool Config\+::load\+From\+File (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})}
+
+
+
+Loads configuration values from a key-\/value text file. Any key found in the file overrides the corresponding default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the config file (e.\+g., \char`\"{}config.\+txt\char`\"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the file was opened successfully, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{config_8h}{config.\+h}}\item 
+\mbox{\hyperlink{config_8cpp}{config.\+cpp}}\end{DoxyCompactItemize}

@@ -1,3 +1,8 @@
+/**
+ * @file config.cpp
+ * @brief Implements the Config constructor and file loader.
+ */
+
 #include "config.h"
 #include <fstream>
 #include <iostream>
