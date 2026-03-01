@@ -1,0 +1,13 @@
+initialServers 10
+totalCycles 10000
+initialQueue 0
+cooldownTime 20
+newRequestProbability 0.2
+streamingProbability 0.5
+minServiceTime 5
+maxServiceTime 50
+ipBlockThreshold 100
+logFileName log.txt
+blockedRangeStart 192.168.0.0
+blockedRangeEnd 192.168.0.255
+summaryCycles 10

@@ -7,6 +7,7 @@ Config::Config()
 {
     initialServers = 10;
     totalCycles = 10000;
+    summaryCycles = 1000;
     initialQueue = 0;
     cooldownTime = 20;
     newRequestProbability = 0.2;
@@ -35,6 +36,10 @@ bool Config::loadFromFile(string path)
         if (key == "initialServers")
         {
             initialServers = val;
+        }
+        else if (key == "summaryCycles")
+        {
+            summaryCycles = val;
         }
         else if (key == "totalCycles")
         {

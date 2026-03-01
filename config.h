@@ -9,6 +9,7 @@ class Config
 public:
     int initialServers;
     int totalCycles;
+    int summaryCycles;
     int initialQueue;
     int cooldownTime;
     float newRequestProbability;
@@ -16,6 +17,7 @@ public:
     int minServiceTime;
     int maxServiceTime;
     int ipBlockThreshold;
+
     string logFileName;
     string blockedRangeStart;
     string blockedRangeEnd;
